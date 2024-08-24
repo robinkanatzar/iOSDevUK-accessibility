@@ -31,10 +31,10 @@ struct SessionCardView: View {
     func timeView() -> some View {
         HStack(spacing: 10) {
             Text(session.startDate.formatted(date: .abbreviated, time: .omitted))
-                .capsuleBackgroundView(color: .white.opacity(0.1))
+                .capsuleBackgroundView(color: .white.opacity(0.08))
             
             Text(session.startDate.formatted(date: .omitted, time: .shortened))
-                .capsuleBackgroundView(color: .white.opacity(0.1))
+                .capsuleBackgroundView(color: .white.opacity(0.08))
 
             Spacer()
         }
