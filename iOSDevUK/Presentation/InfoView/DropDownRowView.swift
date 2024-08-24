@@ -32,6 +32,8 @@ struct DropDownRowView: View {
                             .semiboldAppFont(size: 16)
                             .lineLimit(1)
                             .minimumScaleFactor(0.6)
+                            .frame(minWidth: 44, minHeight: 44)
+                            .contentShape(Rectangle())
                     }
                     .tint(Color(.buttonBackground))
                     .frame(height: 44)

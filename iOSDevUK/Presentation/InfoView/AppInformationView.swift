@@ -26,14 +26,20 @@ struct AppInformationView: View {
                 VStack(spacing: 10) {
                     if let twitterUrl = URL(string: ContactAccounts.developer) {
                         Link("Contact the developer", destination: twitterUrl)
+                            .frame(minWidth: 44, minHeight: 44)
+                            .contentShape(Rectangle())
                     }
                     
                     if let linkedInUrl = URL(string: ContactAccounts.designer) {
                         Link("Contact the designer", destination: linkedInUrl)
+                            .frame(minWidth: 44, minHeight: 44)
+                            .contentShape(Rectangle())
                     }
                     
                     if let twitterUrl = URL(string: ContactAccounts.digidol) {
                         Link("Contact @digidol", destination: twitterUrl)
+                            .frame(minWidth: 44, minHeight: 44)
+                            .contentShape(Rectangle())
                     }
                 }
                 .tint(Color(.purple300))
