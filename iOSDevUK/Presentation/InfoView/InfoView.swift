@@ -44,36 +44,38 @@ struct InfoView: View {
     
     var body: some View {
         NavigationStack(path: $router.infoPath) {
-            VStack(alignment: .leading, spacing: 10) {
-                Text("Here you can find information about us and our values.")
-                    .semiboldAppFont(size: 16)
-                    .foregroundStyle(Color(.textGrey))
-                    .padding(.bottom, 15)
-
-                NavigationLink(value: InfoDestination.locationList) {
-                    NavigationRowView(imageName: ImageNames.location, title: AppStrings.locations)
+            ScrollView() {
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Here you can find information about us and our values.")
+                        .semiboldAppFont(size: 16)
+                        .foregroundStyle(Color(.textGrey))
+                        .padding(.bottom, 15)
+                    
+                    NavigationLink(value: InfoDestination.locationList) {
+                        NavigationRowView(imageName: ImageNames.location, title: AppStrings.locations)
+                    }
+                    
+                    NavigationLink(value: InfoDestination.inclusivity) {
+                        NavigationRowView(imageName: ImageNames.inclusivity, title: AppStrings.inclusivity)
+                    }
+                    
+                    NavigationLink(value: InfoDestination.sponsors) {
+                        NavigationRowView(imageName: ImageNames.sponsors, title: AppStrings.sponsors)
+                    }
+                    
+                    NavigationLink(value: InfoDestination.aboutApp) {
+                        NavigationRowView(imageName: ImageNames.about, title: AppStrings.aboutIOsDev)
+                    }
+                    
+                    NavigationLink(value: InfoDestination.appInformation) {
+                        NavigationRowView(imageName: ImageNames.phone, title: AppStrings.appInfo)
+                    }
+                    
+                    Text("Version: \(Bundle.main.appVersionLong) (\(Bundle.main.appBuild))")
+                        .appFont(size: 12)
+                        .foregroundStyle(Color(.textGrey))
+                    Spacer()
                 }
-                
-                NavigationLink(value: InfoDestination.inclusivity) {
-                    NavigationRowView(imageName: ImageNames.inclusivity, title: AppStrings.inclusivity)
-                }
-
-                NavigationLink(value: InfoDestination.sponsors) {
-                    NavigationRowView(imageName: ImageNames.sponsors, title: AppStrings.sponsors)
-                }
-                
-                NavigationLink(value: InfoDestination.aboutApp) {
-                    NavigationRowView(imageName: ImageNames.about, title: AppStrings.aboutIOsDev)
-                }
-
-                NavigationLink(value: InfoDestination.appInformation) {
-                    NavigationRowView(imageName: ImageNames.phone, title: AppStrings.appInfo)
-                }
-                
-                Text("Version: \(Bundle.main.appVersionLong) (\(Bundle.main.appBuild))")
-                    .appFont(size: 12)
-                    .foregroundStyle(Color(.textGrey))
-                Spacer()
             }
             .padding([.top, .horizontal], 16)
             .navigationTitle("Information")
